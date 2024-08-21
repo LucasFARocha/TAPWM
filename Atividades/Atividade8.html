@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pesquisa de Opinião</title>
+</head>
+<body>
+    <script>
+        var idade;
+        var sexo;
+        var opiniao;
+
+        var mediaIdade = 0;
+        var maisVelho = 0;
+        var maisNovo = 0;
+        var qtdPessimo = 0;
+        var por100OtimoBom = 0;
+        var homens = 0;
+        var mulheres = 0;
+
+        const entrevistados = 5;
+
+        for(var i = 0; i < entrevistados; i++)
+        {
+            idade = parseInt(prompt("Informe sua idade"));
+            mediaIdade += idade;
+
+            if(idade > maisVelho)
+            {
+                maisVelho = idade;
+            }
+            if(!maisNovo || idade < maisNovo)
+            {
+                maisNovo = idade;
+            }
+            
+            sexo = prompt("Informe seu sexo (M/F)");
+            if(sexo == "M")
+            {
+                homens++;
+            }
+            else if(sexo == "F")
+            {
+                mulheres++;
+            }
+
+            opiniao = parseInt(prompt("Qual a sua opinião sobre o" +
+            "filme que acabou de assistir?" +
+            "\n4 - Ótimo" +
+            "\n3 - Bom" +
+            "\n2 - Regular" +
+            "\n1 - Péssimo"));
+
+            if(opiniao == 1)
+            {
+                qtdPessimo++;
+            }
+            else if(opiniao == 4 || opiniao == 3)
+            {
+                por100OtimoBom++;
+            }
+        }
+
+        mediaIdade = mediaIdade / entrevistados;
+        por100OtimoBom = (por100OtimoBom / entrevistados)*100;
+
+        alert("Média de idade entre os entrevistados: " + mediaIdade +
+        "\nIdade do entrevistado mais velho: " + maisVelho +
+        "\nIdade do entrevistado mais novo: " + maisNovo);
+
+        alert("Quantidade de homens que responderam ao questionário: " + homens +
+        "\nQuantidade de mulheres que responderam ao questionário: " + mulheres);
+
+        alert("Quantidade de entrevistados que responderam com péssimo: " + qtdPessimo +
+        "\nPorcentagem de entrevistados que responderam com Ótimo ou Bom: " + por100OtimoBom + "%");
+    </script>
+</body>
+</html>

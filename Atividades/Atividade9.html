@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cálculo IMC</title>
+</head>
+<body>
+    <script>
+        var altura = parseFloat(prompt("Informe sua altura"));
+        var peso = parseFloat(prompt("Informe seu peso"));
+
+        var imc =  peso / (Math.pow(altura, 2)); //altura**2
+        var clfc;
+        var grauOb = 0;
+
+        if(imc < 18.5)
+        {
+            clfc = "Magreza";
+        }
+        else if(imc >= 18.5 && imc <= 24.9)
+        {
+            clfc = "Normal";
+        }
+        else if(imc >= 25 && imc <= 29.9)
+        {
+            clfc = "Sobrepeso";
+            grauOb = 1;
+        }
+        else if(imc >= 30 && imc <= 39.9)
+        {
+            clfc = "Obesidade";
+            grauOb = 2;
+        }
+        else
+        {
+            clfc = "Obesidade grave";
+            grauOb = 3;
+        }
+        alert(`IMC: ${imc.toFixed(2)} | Classificação: ${clfc} | Grau de Obesidade: ${grauOb}`);
+
+    </script>
+</body>
+</html>

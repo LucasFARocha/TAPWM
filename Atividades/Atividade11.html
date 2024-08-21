@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividade 11</title>
+</head>
+<body>
+    <script>
+        // Função de verificação de maior usando if
+    //    function maior(num1, num2, num3, num4){
+    //         if(num1 > num2 && num1 > num3 && num1 > num4){
+    //             return num1;
+    //         }
+    //         else if(num2 > num1 && num2 > num3 && num2 > num4){
+    //             return num2;
+    //         }
+    //         else if(num3 > num1 && num3 > num2 && num3 > num4){
+    //             return num3;
+    //         }
+    //         else{
+    //             return num4;
+    //         }
+    //     }
+
+    //     var num1 = parseFloat(prompt('Insira o primeiro número'));
+    //     var num2 = parseFloat(prompt('Insira o segundo número'));
+    //     var num3 = parseFloat(prompt('Insira o terceiro número'));
+    //     var num4 = parseFloat(prompt('Insira o quarto número'));
+
+    //     alert('O maior número é: ' + maior(num1, num2, num3, num4));
+ 
+        // Função usando Math.max
+        // function maior2(num5, num6, num7, num8){
+        //     return Math.max(num5, num6, num7, num8);
+        // }
+
+        // var num5 = parseFloat(prompt('Insira o primeiro número'));
+        // var num6 = parseFloat(prompt('Insira o segundo número'));
+        // var num7 = parseFloat(prompt('Insira o terceiro número'));
+        // var num8 = parseFloat(prompt('Insira o quarto número'));
+
+        // alert('O maior número é: ' + maior2(num5, num6, num7, num8));
+
+        //Função de ordem crescente
+        function asc(){
+            alert('A ordem crescente é: \n' + vetor.sort());
+        }
+
+        vetor = [];
+        vetor.push(prompt('Insira o primeiro número'));
+        vetor.push(prompt('Insira o segundo número'));
+        vetor.push(prompt('Insira o terceiro número'));
+
+        asc();
+    </script>
+</body>
+</html>
