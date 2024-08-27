@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividade 13</title>
+</head>
+<body>
+    <script>
+        var aluno1 = new Object();
+        aluno1.RA = "31415";
+        aluno1.Nome = "Roberto";
+
+        alert(`RA = ${aluno1.RA} Nome = ${aluno1.Nome}`);
+        
+        var aluno2 = {
+            RA: "926535",
+            Nome: "Tales"
+        };
+
+        alert(`RA = ${aluno2.RA} Nome = ${aluno2.Nome}`);
+
+        function Aluno(ra, nome){
+            this.RA = ra;
+            this.Nome = nome;
+
+            this.MostraDados = function(){
+                return `RA = ${this.RA} Nome = ${this.Nome}`;
+            }
+        }
+        aluno3 = new Aluno("897932", "Bartolomeu");
+    
+        alert(aluno3.MostraDados());
+    </script>
+</body>
+</html>

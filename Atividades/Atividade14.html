@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividade 14</title>
+</head>
+<body>
+    <script>
+        // 1)
+        function Retangulo(x, y){
+            this.x = x;
+            this.y = y;
+
+            this.CalculaArea = function(){
+                return `A área desse retângulo é: ${this.x*this.y}`;
+            }
+        }
+
+        var base = prompt("Digite o valor da base do retângulo");
+        var altura = prompt("Digite o valor da altura do retângulo");
+
+        var retangulo = new Retangulo(base, altura);
+        alert(retangulo.CalculaArea());
+
+        // 2)
+        // Crie uma nova função tipo Conta, 
+        // com as propriedades nome correntista, banco, 
+        // numero da conta e saldo. Crie utilizando 
+        // herança duas novas funções: 
+        // Corrente com Saldo Especial e 
+        // Poupanca com Juros, Data Vencimento.
+        // Receber os dados via get e set. 
+        // Criar um objeto de cada uma: 
+        // Corrente e Poupanca e mostrar os seus dados.
+
+        function Conta(){
+            var nomeCorrentista;
+            var banco;
+            var numConta;
+            var saldo;
+
+            this.getNomeCorrentista = function(){
+                return this.nomeCorrentista;
+            }
+            this.setNomeCorrentista = function(value){
+                this.nomeCorrentista = value;
+            }
+
+            this.getBanco = function(){
+                return this.banco;
+            }
+            this.setBanco = function(value){
+                this.banco = value;
+            }
+
+            this.getNumConta = function(){
+                return this.numConta;
+            }
+            this.setNumConta = function(value){
+                this.numConta = value;
+            }
+
+            this.getSaldo = function(){
+                return this.saldo;
+            }
+            this.setSaldo = function(value){
+                this.saldo = value;
+            }
+        }
+
+        function Corrente(){
+            var saldoEspecial;
+
+            this.getSaldoEspecial = function(){
+                return this.saldoEspecial;
+            }
+            this.setSaldoEspecial = function(value){
+                this.saldoEspecial = value;
+            }
+        }
+        Corrente.prototype = new Conta();
+
+        function Poupanca(){
+            var juros;
+            var dataVencimento;
+
+            this.getJuros = function(){
+                return this.juros;
+            }
+            this.setJuros = function(value){
+                this.juros = value;
+            }
+
+            this.getDataVenc = function(){
+                return this.dataVencimento;
+            }
+            this.setDataVenc = function(value){
+                this.dataVencimento = value;
+            }
+        }
+        Poupanca.prototype = new Conta();
+
+        var corrente = new Corrente();
+        var poupanca = new Poupanca();
+
+        corrente.setNomeCorrentista("Luiz");
+        corrente.setBanco("Santander");
+        corrente.setNumConta("299");
+        corrente.setSaldo(19);
+        corrente.setSaldoEspecial(200);
+
+        poupanca.setNomeCorrentista("Pedro");
+        poupanca.setBanco("Itaú");
+        poupanca.setNumConta(792);
+        poupanca.setSaldo(42500);
+        poupanca.setJuros(55);
+        poupanca.setDataVenc("22/03/2026");
+
+        alert(`Dados da conta corrente:
+        Nome do correntista: ${corrente.getNomeCorrentista()}
+        Banco: ${corrente.getBanco()}
+        Número da conta: ${corrente.getNumConta()}
+        Saldo: ${corrente.getSaldo()}
+        Saldo Especial: ${corrente.getSaldoEspecial()}`);
+
+        alert(`Dados da conta poupança: 
+        Nome do correntista: ${poupanca.getNomeCorrentista()}
+        Banco: ${poupanca.getBanco()}
+        Número da conta: ${poupanca.getNumConta()}
+        Saldo: ${poupanca.getSaldo()}
+        Juros: ${poupanca.getJuros()}
+        Data de vencimento: ${poupanca.getDataVenc()}`);
+    </script>
+</body>
+</html>
