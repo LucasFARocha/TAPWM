@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividade 15</title>
+</head>
+<body>
+    <script>
+        // 1)
+        class Retangulo{
+            constructor(x, y){
+                this.x = x;
+                this.y = y;
+            }
+
+            area(){
+                return this.x*this.y;
+            }
+        }
+
+        var base = prompt('Informe a base do retângulo');
+        var altura = prompt('Informe a altura do retângulo');
+
+        var retangulo = new Retangulo(base, altura);
+        alert(`A área desse retângulo é: ${retangulo.area()}`);
+
+        // 2)
+        class Conta{
+            constructor(){
+                this.nomeCorrentista;
+                this.banco;
+                this.numConta;
+                this.saldo;
+            }
+
+            getNomeCorrentista(){
+                return this.nomeCorrentista;
+            }
+            setNomeCorrentista(value){
+                this.nomeCorrentista = value;
+            }
+
+            getBanco(){
+                return this.banco;
+            }
+            setBanco(value){
+                this.banco = value;
+            }
+
+            getNumConta(){
+                return this.numConta;
+            }
+            setNumConta(value){
+                this.numConta = value;
+            }
+
+            getSaldo(){
+                return this.saldo;
+            }
+            setSaldo(value){
+                this.saldo = value;
+            }
+        }
+
+        class Corrente extends Conta{
+            constructor(){
+                super();
+                this.saldoEspecial;
+            }
+
+            getSaldoEspecial(){
+                return this.saldoEspecial;
+            }
+            setSaldoEspecial(value){
+                this.saldoEspecial = value;
+            }
+        }
+
+        class Poupanca extends Conta{
+            constructor(){
+                super();
+
+                this.juros;
+                this.dataVencimento;
+            }
+
+            getJuros(){
+                return this.juros;
+            }
+            setJuros(value){
+                this.juros = value;
+            }
+
+            getDataVencimento(){
+                return this.dataVencimento;
+            }
+            setDataVencimento(value){
+                this.dataVencimento = value;
+            }
+        }
+
+        var corrente = new Corrente();
+        corrente.setNomeCorrentista('Luiz');
+        corrente.setBanco('Bradesco');
+        corrente.setNumConta(12345);
+        corrente.setSaldo(19);
+        corrente.setSaldoEspecial(20);
+
+        var poupanca = new Poupanca();
+        poupanca.setNomeCorrentista('Matheus');
+        poupanca.setBanco('Inter');
+        poupanca.setNumConta('67890');
+        poupanca.setSaldo(435);
+        poupanca.setJuros(15);
+        poupanca.setDataVencimento('27/08/2024');
+
+        alert(`Correntista
+        Nome: ${corrente.getNomeCorrentista()}
+        Banco: ${corrente.getBanco()}
+        Número da conta: ${corrente.getNumConta()}
+        Saldo: ${corrente.getSaldo()}
+        Saldo especial: ${corrente.getSaldoEspecial()}`);
+
+        alert(`Poupança
+        Nome: ${poupanca.getNomeCorrentista()}
+        Banco: ${poupanca.getBanco()}
+        Número da conta: ${poupanca.getNumConta()}
+        Saldo: ${poupanca.getSaldo()}
+        Juros: ${poupanca.getJuros()}
+        Data de vencimento: ${poupanca.getDataVencimento()}`);
+    </script>
+</body>
+</html>
