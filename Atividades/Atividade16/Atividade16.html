@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Janela</title>
+</head>
+<body onload="janela('fechada.png', 'Abra a janela')">
+    <script>
+        function janela(src, msg){
+            var imagem = document.getElementById("janela");
+            var texto = document.getElementById("texto");            
+            
+            imagem.src = src;
+            texto.innerText = msg;
+        }
+    </script>
+    
+    <img id="janela" src="" width="200px" height="200px" alt="" 
+        onmouseover="janela('aberta.png', 'Janela Aberta')" 
+        onmouseout="janela('fechada.png', 'Janela Fechada')"
+        onclick="janela('quebrada.webp', 'Janela Quebrada')">
+
+    <h1 id="texto"></h1>
+</body>
+</html>
