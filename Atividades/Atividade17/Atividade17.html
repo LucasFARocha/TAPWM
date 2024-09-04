@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Caixa alta e baixa</title>
+</head>
+<body>
+    <script>
+        function upper(){
+            var input = document.getElementById('input');
+            input.value = input.value.toUpperCase();
+        }
+
+        function lower(){
+            var input = document.getElementById('input');
+            input.value = input.value.toLowerCase();
+        }
+    </script>
+
+    <label for="input">Escreva algo</label>
+    <br>
+    <input type="text" id="input">
+
+    <br><br>
+    <input type="radio" id="cb1" name="escolha" onclick="upper()">
+    <label for="cb1">Caixa alta</label>
+    <br>
+    <input type="radio" id="cb2" name="escolha" onclick="lower()">
+    <label for="cb2">Caixa baixa</label>
+</body>
+</html>
