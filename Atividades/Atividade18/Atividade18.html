@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividade 18</title>
+</head>
+<body style="background-color: rgba(127, 187, 255, 0.87);">
+    <script>
+        function validar(){
+            var email = document.forms.form1.elements["email"].value
+            if(email.length > 0 && !email.includes(".")){
+                alert('Inclua um ponto (.) no email');
+            }
+            if(email.endsWith(".")){
+                alert('Insira uma parte após o ponto (.)')
+            }
+
+            if(document.getElementById("yes").checked){
+                alert('Volte sempre à pagina!');
+            }
+            else{
+                alert('Que bom que você voltou a visitar esta página!');
+            }
+        }
+    </script>
+    <form action="" name="form1" onsubmit="validar()">
+        <h1>Formulário principal</h1>
+        
+        <label for="name">Nome: </label>
+        <input id="name" type="text" minlength="10">
+        <br><br>
+
+        <label for="email">Email: </label>
+        <input id="email" type="email">
+        <br><br><br>
+
+        <label for="commentary">Comentário</label>
+        <br>
+        <textarea id="commentary" cols="27" rows="5" minlength="20"></textarea>
+        <br><br>
+
+        <h3>Pesquisa</h3>
+        <p>Primeira vez na página?</p>
+
+        <label for="yes">Sim</label>
+        <input id="yes" type="radio" name="answer" required>
+        
+        <label for="no">Não</label>
+        <input id="no" type="radio" name="answer" required>
+        <br><br><br>
+
+        <button type="submit">Enviar</button>
+        <button type="reset">Limpar</button>
+    </form>
+</body>
+</html>
